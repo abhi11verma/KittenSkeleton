@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {decrement, increment} from 'src/action/counterAction';
+import {decrement, getUsers, increment} from 'src/action/counterAction';
 import LandingScreen from 'src/LandingScreen';
 
 const mapStateToProps = ({counter:{counter}}) => (
@@ -8,4 +8,4 @@ const mapStateToProps = ({counter:{counter}}) => (
   }
 );
 
-export default connect(mapStateToProps, {increment, decrement})(LandingScreen);
+export default connect(mapStateToProps, {increment, decrement,getUsers})(LandingScreen);

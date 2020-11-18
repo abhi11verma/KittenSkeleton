@@ -6,7 +6,7 @@ const HeartIcon = (props) => (
   <Icon {...props} name='heart'/>
 );
 
-function LandingScreen({counter, increment, decrement}) {
+function LandingScreen({counter, increment, decrement,getUsers}) {
   return (
     <Layout style={styles.container}>
       <Text style={styles.text} category='h1'>
@@ -21,8 +21,8 @@ function LandingScreen({counter, increment, decrement}) {
       <Text style={styles.text} appearance='hint'>
         For example, try changing theme to Dark by using eva.dark
       </Text>
-      <Button style={styles.likeButton} accessoryLeft={HeartIcon}>
-        LIKE
+      <Button style={styles.likeButton} accessoryLeft={HeartIcon} onPress={getUsers}>
+        CONSOLE LOG USERS
       </Button>
       <View style={{alignItems: 'center'}}>
         <Text category='h3'>{counter}</Text>

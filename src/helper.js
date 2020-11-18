@@ -1,4 +1,9 @@
 import {Dimensions} from 'react-native';
+import {isNull, omitBy} from 'lodash';
+
+
+export const omitNulls = d => omitBy(d, isNull);
+
 
 const dims = Dimensions.get('window');
 export const DEVICE_WIDTH = dims.width;
