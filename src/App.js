@@ -17,18 +17,23 @@ import * as eva from '@eva-design/eva';
 import customTheme from 'src/theme/marvelColorTheme';
 import 'react-native-gesture-handler';
 import {AppNavigator} from 'src/navigator/AppNavigator';
+import {Provider} from 'react-redux';
+import configureStore from 'src/store/configureStore';
 
 
 /**
  * Use any valid `name` property from eva icons (e.g `github`, or `heart-outline`)
  * https://akveo.github.io/eva-icons
  */
+export const {store} = configureStore();
 
 export default () => (
   <>
     <IconRegistry icons={EvaIconsPack}/>
     <ApplicationProvider {...eva} theme={{...eva.light,...customTheme}}>
-      <AppNavigator/>
+      <Provider store={store}>
+        <AppNavigator/>
+      </Provider>
     </ApplicationProvider>
   </>
 );

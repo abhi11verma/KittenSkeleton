@@ -1,12 +1,12 @@
 import React from 'react';
-import {Button, Icon, Layout, Text} from '@ui-kitten/components';
-import {StyleSheet} from 'react-native';
+import {Button, ButtonGroup, Icon, Layout, Text} from '@ui-kitten/components';
+import {StyleSheet, View} from 'react-native';
 
 const HeartIcon = (props) => (
   <Icon {...props} name='heart'/>
 );
 
-function LandingScreen() {
+function LandingScreen({counter, increment, decrement}) {
   return (
     <Layout style={styles.container}>
       <Text style={styles.text} category='h1'>
@@ -24,6 +24,13 @@ function LandingScreen() {
       <Button style={styles.likeButton} accessoryLeft={HeartIcon}>
         LIKE
       </Button>
+      <View style={{alignItems: 'center'}}>
+        <Text category='h3'>{counter}</Text>
+        <ButtonGroup size='medium'>
+          <Button onPress={decrement}>-</Button>
+          <Button onPress={increment}>+</Button>
+        </ButtonGroup>
+      </View>
     </Layout>
   );
 }
