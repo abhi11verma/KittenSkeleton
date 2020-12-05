@@ -19,7 +19,12 @@ A skeleton boiler plate using amazing [UI Kitten](https://github.com/akveo/react
 ## Running the app
 [Android]
 - clone the repository
-- Rename the project
+
+### Rename the project
+-  `rm -rf .git`
+-  `npx react-native-rename <newName>`
+ 
+### Start App
 - use `make deps` to install packages
 - use `make run_app` to install the application on an emulator running
 - use `make run_packager` to start the packager separately if not already started or required 
